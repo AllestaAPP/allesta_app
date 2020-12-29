@@ -1,0 +1,72 @@
+{% extends "./_base.html" %}
+<!--  -->
+{% block content %}
+<div class="container">
+    <h2 class="text-center">データ削除</h2>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="float-right">
+                    <a class="btn btn-outline-secondary" href="{% url 'registered' %}">戻る</a>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modal-example">
+                       削除確認
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% include "./item_card.html" %}
+        <div class="row">
+            <div class="col-12">
+                <div class="float-right">
+
+<!--                    <form action="" method="post">-->
+<!--                        {% csrf_token %}-->
+                    <a class="btn btn-outline-secondary" href="{% url 'registered' %}">戻る</a>
+<!--                    </form>-->
+<!--                    <input type="submit" class="btn btn-outline-secondary" value="削除" />-->
+
+
+                    <!-- 1.モーダル表示のためのボタン -->
+                   <button class="btn btn-primary" data-toggle="modal" data-target="#modal-example">
+                       削除確認
+                    <!--モーダルダイアログ表示-->
+                   </button>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- 2.モーダルの配置 -->
+<div class="modal" id="modal-example" tabindex="-1">
+    <div class="modal-dialog">
+
+        <!-- 3.モーダルのコンテンツ -->
+        <div class="modal-content">
+            <!-- 4.モーダルのヘッダ -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="modal-label">ダイアログ</h4>
+            </div>
+            <!-- 5.モーダルのボディ -->
+            <div class="modal-body">
+                このデータを削除します。よろしいですか？
+                {% include "./item_card.html" %}
+            </div>
+            <!-- 6.モーダルのフッタ -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                <form action="" method="post">
+                    {% csrf_token %}
+<!--                <button type="button" class="btn btn-primary">削除</button>-->
+                    <input type="submit" class="btn btn-outline-secondary" value="削除"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-3">
+        <p>名前</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.name }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>宅配検品</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.takuhaikenpin }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>その他検品</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.sonotakenpin }}</p>
+<!--        <p>{{ item.get_sex_display }}</p>-->
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>入庫商品化</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.nyuukosyouhinka }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>仕入商品化</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.shiiresyouhinka }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>クリーニング</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.cleaning }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>データイレース</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.dataerase }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>仕入PC</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.shiirePC }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>TSUTAYA関連</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.tsutaya }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>宅配開梱</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.takuhaikaikon }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>搬出・ピッキング</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.picking }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>データ・画像登録</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.datanyuuryoku }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <p>備考</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.memo|linebreaksbr }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <p>登録日</p>
+    </div>
+    <div class="col-9">
+        <p>{{ item.created_at|date:"Y/m/d G:i:s" }}</p>
+    </div>
+</div>

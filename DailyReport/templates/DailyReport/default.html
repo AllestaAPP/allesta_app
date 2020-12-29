@@ -1,0 +1,31 @@
+{% extends "./_base.html" %}
+{% block content %}
+{{ form.certifications.errors }}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center">トップページ</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="text-center">
+            <hr />
+            <p><h3>{{today}}</h3></p>
+            <p><a class="btn btn-outline-secondary" href="{% url 'tmpsave' %}">一時保存中: <font color="maroon"><b>{{tmp_num}}</b></font> 件</a></p>
+            <p><a class="btn btn-outline-secondary" href="{% url 'registered' %}">登録済み：<font color="maroon"><b>{{reg_num}}</b></font> 件</a></p>
+            <hr />
+            <p><a class="btn btn-outline-primary" href="{% url 'create' %}">日報新規作成</a></p>
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-12">
+
+        </div>
+    </div>
+
+{% endblock %}
