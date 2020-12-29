@@ -9,11 +9,11 @@ class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
         fields = ('tmp', 'name', 'takuhaikenpin', 'sonotakenpin', 'nyuukosyouhinka', 'shiiresyouhinka',
-                  'cleaning', 'dataerase', 'shiirePC', 'tsutaya', 'takuhaikaikon', 'picking', 'datanyuuryoku',
-                  'created_at', 'memo')
+                  'cleaning', 'dataerase', 'shiirePC', 'SIMlockkaijo', 'tsutaya', 'takuhaikaikon', 'picking',
+                  'datanyuuryoku', 'soukin', 'hensou', 'lanksatei', 'created_at', 'memo')
 
         widgets = {
-                    #'name': forms.TextInput(attrs={'placeholder':'記入例：山田　太郎'}),
+                    # 'name': forms.TextInput(attrs={'placeholder':'記入例：山田　太郎'}),
                     'name': forms.Select(),
                     'takuhaikenpin': forms.NumberInput(attrs={'min': 0}),
                     'sonotakenpin': forms.NumberInput(attrs={'min': 0}),
@@ -22,14 +22,18 @@ class ItemForm(forms.ModelForm):
                     'cleaning': forms.NumberInput(attrs={'min': 0}),
                     'dataerase': forms.NumberInput(attrs={'min': 0}),
                     'shiirePC': forms.NumberInput(attrs={'min': 0}),
+                    'SIMlockkaijo': forms.NumberInput(attrs={'min': 0}),
                     'tsutaya': forms.NumberInput(attrs={'min': 0}),
                     'takuhaikaikon': forms.NumberInput(attrs={'min': 0}),
                     'picking': forms.NumberInput(attrs={'min': 0}),
                     'datanyuuryoku': forms.NumberInput(attrs={'min': 0}),
+                    'soukin': forms.NumberInput(attrs={'min': 0}),
+                    'hensou': forms.NumberInput(attrs={'min': 0}),
+                    'lanksatei': forms.NumberInput(attrs={'min': 0}),
                     'created_at': forms.DateTimeInput(),
 
 
-                    #'sex': forms.RadioSelect(), ←ラジオボタン
+                    # 'sex': forms.RadioSelect(), ←ラジオボタン
                     # 'sex': forms.Select(),  # プルダウンセレクト
-                    'memo': forms.Textarea(attrs={'rows':4}),
+                    'memo': forms.Textarea(attrs={'rows': 4}),
                   }

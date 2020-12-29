@@ -118,6 +118,15 @@ class Item(models.Model):
                     validators.MaxValueValidator(999)]
     )
 
+    SIMlockkaijo = models.IntegerField(
+        verbose_name='SIMロック解除(@200)',
+        # blank=True,
+        null=True,
+        default=0,
+        validators=[validators.MinValueValidator(0),
+                    validators.MaxValueValidator(999)]
+    )
+
     tsutaya = models.DecimalField(
         verbose_name='TSUTAYA関連(h) ※0.5h刻みで入力',
         # blank=True,
@@ -150,6 +159,36 @@ class Item(models.Model):
 
     datanyuuryoku = models.DecimalField(
         verbose_name='データ入力・画像登録(h) ※0.5h刻みで入力',
+        # blank=True,
+        null=True,
+        max_digits=5,
+        decimal_places=1,
+        default=0,
+        validators=[check_age]
+    )
+
+    soukin = models.DecimalField(
+        verbose_name='送金関連業務(h) ※0.5h刻みで入力',
+        # blank=True,
+        null=True,
+        max_digits=5,
+        decimal_places=1,
+        default=0,
+        validators=[check_age]
+    )
+
+    hensou = models.DecimalField(
+        verbose_name='返送関連業務(h) ※0.5h刻みで入力',
+        # blank=True,
+        null=True,
+        max_digits=5,
+        decimal_places=1,
+        default=0,
+        validators=[check_age]
+    )
+
+    lanksatei = models.DecimalField(
+        verbose_name='ランク査定(h) ※0.5h刻みで入力',
         # blank=True,
         null=True,
         max_digits=5,
