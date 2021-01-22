@@ -1,0 +1,81 @@
+{% extends "./_base.html" %}
+{% block content %}
+{{ form.certifications.errors }}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center">データ集計(テスト)</h2>
+            <div class="float-right">
+                <a class="btn btn-outline-secondary" href="{% url 'index' %}">戻る</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+table td {
+	background: #eee;
+}
+table tr:nth-child(odd) td {
+	background: #fff;
+}
+test {
+    display: inline-flex;
+}
+</style>
+
+<div class="row">
+    <div class="col-12">
+
+            <form method="POST">{% csrf_token %}
+                日付検索 <input type="text" name="key-word" size="15" placeholder="yyyy-mm-dd">
+                <button type="submit" name="keyword" class="btn btn-outline-primary">検索</button>
+            </form>
+
+        <hr />
+<style>
+test {
+    display: inline-flex;
+}
+</style>
+
+{#        <div style="display:inline-flex" style="margin: 5px 10px 15px 20px">#}
+        <div style="display:inline-flex">
+            <table border="1">
+                <th>年月日</th><td>{{ tmpdate }}</td>
+            </table>
+            &nbsp;
+            <form method="POST">{% csrf_token %}
+                <input type="hidden" name="key-word2" value={{ tmpdate }}>
+                <button type="submit" name="keyword2" class="btn btn-outline-primary">CSVﾀﾞｳﾝﾛｰﾄﾞ</button>
+            </form>
+        </div>
+
+        <hr />
+
+    <table border="1">
+        <th>作業費合計</th>
+        <td>{{ total }}</td>
+    </table>
+    <table border="1">
+        <tr>
+            <th>作業者</th><th>宅配検品</th><th>その他検品</th><th>入庫</th><th>仕入入庫</th><th>ｸﾘｰﾆﾝｸﾞ</th><th>ﾃﾞｰﾀｲﾚｰｽ</th>
+            <th>仕入PC</th><th>SIMﾛｯｸ解除</th><th>ﾂﾀﾔ</th><th>宅配開梱</th><th>搬出・ﾋﾟｯｷﾝｸﾞ・ｺﾞﾐ分別</th><th>画像・ﾃﾞｰﾀ入力</th>
+            <th>送金関連</th><th>返金関連</th><th>ﾗﾝｸ査定</th><th>備考</th><th>作業費小計</th>
+        </tr>
+
+        {% for dt in l %}
+            <tr align="center">
+                <td>{{ dt.0 }}</td>
+                <td>{{ dt.1 }}</td><td>{{ dt.2 }}</td><td>{{ dt.3 }}</td><td>{{ dt.4 }}</td><td>{{ dt.5 }}</td>
+                <td>{{ dt.6 }}</td><td>{{ dt.7 }}</td><td>{{ dt.8 }}</td><td>{{ dt.9 }}</td><td>{{ dt.10 }}</td>
+                <td>{{ dt.11 }}</td><td>{{ dt.12 }}</td><td>{{ dt.13 }}</td><td>{{ dt.14 }}</td><td>{{ dt.15 }}</td>
+                <td>{{ dt.16 }}</td><td>{{ dt.17 }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    </div>
+</div>
+
+{% endblock %}
