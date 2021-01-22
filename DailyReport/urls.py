@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import ItemFilterView, ItemDetailView, ItemCreateView, ItemUpdateView, ItemDeleteView
-from .views import csvdownload, tmpsave, default, _base
+from .views import csvdownload, tmpsave, default, _base, totalup
 
 urlpatterns = [
     path('',  default, name='index'),
@@ -13,4 +13,5 @@ urlpatterns = [
     # path('default/', default, name='default'),
     path('_base/', _base, name='base'),
     path('registered/',  ItemFilterView.as_view(), name='registered'),
+    path('totalup/',  totalup, name='totalup'),
 ]

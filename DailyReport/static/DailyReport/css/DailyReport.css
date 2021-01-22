@@ -1,4 +1,114 @@
+/*
+totalup.html
+*/
+table td {
+	background: #eee;
+}
+table tr:nth-child(odd) td {
+	background: #fff;
+}
+table td {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*アコーディオン全体*/
+.menu_ac {
+  width: 15%;
+  padding: 0px 10px 5px;
+}
+.menu_ac input.ac {
+  display: none; /*チェックボックスを隠す*/
+}
+/*バー部分*/
+.menu_ac label {
+  cursor :pointer;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  margin: 0 0 3px;
+  padding: 7px;
+  background-color: #333;
+  border-radius: 4px;
+  background: #939393;
+}
+.menu_ac label.checkbox_v {
+  background-color: #111;
+  color: #111;
+  padding: 3px;
+  background: #EFEFEF;
+}
+/*開いたときに表示される部分*/
+.menu_ac ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 1px;
+}
+.menu_ac li {
+  height: 0;
+  overflow-y: hidden;
+  transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+  -webkit-transition: padding-bottom 0.5s, padding-top 0.5s
+  -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
+  -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
+  -o-transition: padding-bottom 0.5s, padding-top 0.5s;
+}
+#menu_bar01:checked ~ #links01 li,
+#menu_bar02:checked ~ #links02 li {
+  height: auto; /*開いたときに表示されるliの高さ*/
+  opacity: 1;
+  background: #f1f1f1;
+  padding: 1px;
+}
+ /*開いたときの下の余白*/
+#menu_bar01:checked ~ #links01 li:last-child,
+#menu_bar02:checked ~ #links02 li:last-child {
+  margin-bottom: 20px;
+}
+/*閉じた状態の矢印描画*/
+.menu_ac label.ac:after{
+  content:"";
+  display:block;
+  width:8px;
+  height:8px;
+  border-top: #fff 2px solid;
+  border-right: #fff 2px solid;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  position:absolute;
+  right: 5%;
+  top: 0;
+  bottom: 15%;
+  margin: auto;
+}
+/*開いた状態の矢印描画*/
+.menu_ac input.ac[type=checkbox]:checked + label.ac:after{
+  content:"";
+  display:block;
+  width:8px;
+  height:8px;
+  border-top: #fff 2px solid;
+  border-right: #fff 2px solid;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position:absolute;
+  right: 5%;
+  top: 7%;
+  bottom: 0;
+  margin: auto;
+}
+/*
+totalup.html
+*/
+
 .row{
     margin-top:3px;
     margin-bottom:3px;
 }
+

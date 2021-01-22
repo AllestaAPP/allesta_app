@@ -28,7 +28,6 @@
 
      <script type="text/javascript" language="javascript">
         function onButtonClick() {
-
           var arr1 = [
             document.getElementById("id_takuhaikenpin").value,
             document.getElementById("id_sonotakenpin").value,
@@ -46,7 +45,6 @@
             document.getElementById("id_hensou").value,
             document.getElementById("id_lanksatei").value,
           ];
-
           var arr2 = [
             "宅配検品：　",
             "その他検品：　",
@@ -58,13 +56,12 @@
             "SIMロック解除：　",
             "ツタヤ関連：　",
             "宅配開梱：　",
-            "搬出・ピッキング：　",
+            "搬出・ピッキング・ゴミ分別：　",
             "データ・画像登録：　",
             "送金関連業務：　",
             "返送関連業務：　",
             "ランク査定：　",
           ];
-
           var pr = ""
           for (let i = 0; i < arr1.length; ++i) {
 
@@ -73,10 +70,8 @@
                   }
               console.log(pr);
           }
-
           target = document.getElementById("output")
           target.innerHTML =  "<b><font size=4>" + "作業者名：　" +　document.getElementById("id_name").value + "</b>"　+ "<hr />" + "<b>" + pr + "<font size=4></b>"
-
         }
       </script>
 

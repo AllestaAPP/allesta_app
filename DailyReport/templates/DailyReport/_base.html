@@ -12,7 +12,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <link href="{% static "DailyReport/css/DailyReport.css" %}" rel="stylesheet">
+    <link href="{% static 'DailyReport/css/DailyReport.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -37,9 +37,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'registered'%}">本日登録済み: <font color="maroon"><b>{{reg_num}}</b></font> 件</a>
                 </li>
-
-                 <li class="nav-item1">
-                    <a class="nav-link" href="{% url 'admin:logout'%}">ログアウト</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'totalup'%}">データ集計</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:logout'%}">{{ user.get_username }}：ログアウト</a>
                 </li>
             </ul>
         </div>
@@ -52,8 +56,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="{% static "DailyReport/js/plugins/responsive-paginate.js" %}"></script>
-    <script src="{% static "DailyReport/js/DailyReport.js" %}"></script>
+    <script src="{% static 'DailyReport/js/plugins/responsive-paginate.js' %}"></script>
+    <script src="{% static 'DailyReport/js/DailyReport.js' %}"></script>
 </body>
 
 </html>
